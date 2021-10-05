@@ -16,3 +16,6 @@ tugas-1-DaffaTristan created by GitHub Classroom
 
 * Depan Atas
 <br>![depan-atas](/img/depan-atas.jpeg)
+
+* Demo
+<br>![Demo](/img/demo.gif)
