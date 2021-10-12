@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Tugas Three js Daffa Tristan Firdaus</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/three.min.js"></script>
     <style>
         body {
             background-color: bisque;
@@ -95,90 +95,81 @@
         }
         renderer.render(scene, camera);
     }
-        // set up the environment - 
-        // initiallize scene, camera, objects and renderer
-        let init = function() {
-            // 1. create the scene
-            scene = new THREE.Scene();
-            scene.background = new THREE.Color(0xababab);
-            
-            // 2. create an locate the camera       
-            camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 1, 1000);
-            camera.position.z = 11;
+        // 1. create the scene
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xababab);
+        
+        // 2. create an locate the camera       
+    camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 1, 1000);
+    camera.position.z = 11;
 
-            const directLight = new THREE.DirectionalLight(0xffffff, 1);
-            directLight.position.set(7, 5, 7).normalize();
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-            ambientLight.position.set(10, 0, 10);
-            const pointLight = new THREE.PointLight(0xffffff, 1, 100);
-            pointLight.position.set(0, 0, 0);
-            const hemiLight = new THREE.HemisphereLight(0xffffff, '#FF0000', 1);
-            hemiLight.position.set(10, 20, 25);
-            const spotLight = new THREE.SpotLight(0xffffff, 1, 75);
-            spotLight.position.set(100, 15, 15);
-            
-            const lights = [directLight, ambientLight, pointLight, hemiLight, spotLight];
+    const directLight = new THREE.DirectionalLight(0xffffff, 1);
+    directLight.position.set(7, 5, 7).normalize();
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    ambientLight.position.set(10, 0, 10);
+    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+    pointLight.position.set(0, 0, 0);
+    const hemiLight = new THREE.HemisphereLight(0xffffff, '#FF0000', 1);
+    hemiLight.position.set(10, 20, 25);
+    const spotLight = new THREE.SpotLight(0xffffff, 1, 75);
+    spotLight.position.set(100, 15, 15);
+        
+    const lights = [directLight, ambientLight, pointLight, hemiLight, spotLight];
 
-            lights.forEach((obj) => scene.add(obj));
+    lights.forEach((obj) => scene.add(obj));
 
-            lights.forEach((light) => 
-            {
-                light.visible = false;
-            });
-            lights[0].visible = true;
+    lights.forEach((light) => 
+    {
+        light.visible = false;
+    });
+    lights[0].visible = true;
 
-            const selectedLight = document.getElementById('light');
-            selectedLight.addEventListener('change', (e) => 
-            {
-                const selected = e.target.value;
-                lights.forEach((light) => 
-                {
-                    light.visible = false;
-                });
-                lights[selected].visible = true;
-            });
+    const selectedLight = document.getElementById('light');
+    selectedLight.addEventListener('change', (e) => 
+    {
+        const selected = e.target.value;
+        lights.forEach((light) => 
+        {
+            light.visible = false;
+        });
+        lights[selected].visible = true;
+    });
 
-            // 3. create an locate the object on the scene           
-            createCube();
-            createCylinder();
-            createTorus();
-            createSphere();
-            createCone();
-            
-            // 4. create the renderer     
-            renderer = new THREE.WebGLRenderer();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+    // 3. create an locate the object on the scene           
+    createCube();
+    createCylinder();
+    createTorus();
+    createSphere();
+    createCone();
+        
+    // 4. create the renderer     
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
 
-            document.body.appendChild(renderer.domElement);
-          
-        };
-      
-        
-        // main animation loop - calls 50-60 in a second.
-        let mainLoop = function() {
-            console.log("Hello");
-            cube.rotation.x += -0.04;
-            cube.rotation.y += 0.01;
+    document.body.appendChild(renderer.domElement);
+             
+    // main animation loop - calls 50-60 in a second.
+    let mainLoop = function() {
+        console.log("Hello");
+        cube.rotation.x += -0.04;
+        cube.rotation.y += 0.01;
 
-            cylinder.rotation.x += 0.009;
-            cylinder.rotation.y += 0.04;
+        cylinder.rotation.x += 0.009;
+        cylinder.rotation.y += 0.04;
 
-            sphere.rotation.x += 0.02;
-            sphere.rotation.y += 0.08;
-            sphere.rotation.z += 0.02;
+        sphere.rotation.x += 0.02;
+        sphere.rotation.y += 0.08;
+        sphere.rotation.z += 0.02;
 
-            torus.rotation.x += 0.09;
-            torus.rotation.y += 0.01;
+        torus.rotation.x += 0.09;
+        torus.rotation.y += 0.01;
 
-            cone.rotation.x += -0.01;
-            cone.rotation.y += -0.08;
+        cone.rotation.x += -0.01;
+        cone.rotation.y += -0.08;
 
-            renderer.render(scene, camera);
-            requestAnimationFrame(mainLoop);
-        };
-        
-        ///////////////////////////////////////////////
-        init();
-        mainLoop();
-    </script>
-    
+        renderer.render(scene, camera);
+        requestAnimationFrame(mainLoop);
+    };
+    ///////////////////////////////////////////////
+    mainLoop();
+</script> 
