@@ -1,4 +1,4 @@
-# Tugas Three.js DaffaTristan
+# Tugas 2 Three.js DaffaTristan
 <br>Nama : Daffa Tristan Firdaus
 <br>NRP : 05111940000006
 <br>Kelas : Grafika Komputer D
