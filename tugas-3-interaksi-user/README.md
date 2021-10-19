@@ -2,3 +2,5 @@
 <br>Nama : Daffa Tristan Firdaus
 <br>NRP : 05111940000006
 <br>Kelas : Grafika Komputer D
+
+![demo](/img/tugas-3.png)
