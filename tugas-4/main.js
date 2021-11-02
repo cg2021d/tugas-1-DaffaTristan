@@ -23,7 +23,7 @@ function main() {
   
     var texture, material, plane;
 
-    texture = THREE.ImageUtils.loadTexture( "/tugas-4/texture/patio.jpg" );
+    texture = THREE.ImageUtils.loadTexture( "/texture/patio.jpg" );
 
     texture.wrapS = THREE.RepeatWrapping; 
     texture.wrapT = THREE.RepeatWrapping;
@@ -118,7 +118,7 @@ function main() {
 
     {
         const loader = new THREE.TextureLoader();
-        const texture = loader.load('/tugas-4/background/snow.jpg',
+        const texture = loader.load('/background/snow.jpg',
         () => {
             const rt = new THREE.WebGLCubeRenderTarget(texture.image.height);
             rt.fromEquirectangularTexture(renderer, texture);
