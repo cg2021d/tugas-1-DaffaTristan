@@ -118,7 +118,7 @@ function main() {
 
     {
         const loader = new THREE.TextureLoader();
-        const texture = loader.load('https://user-images.githubusercontent.com/72509035/139847793-dc7a16a5-b9b3-4aaf-aafa-d7140dd52ce0.jpg',
+        const texture = loader.load("https://user-images.githubusercontent.com/72509035/139847793-dc7a16a5-b9b3-4aaf-aafa-d7140dd52ce0.jpg",
         () => {
             const rt = new THREE.WebGLCubeRenderTarget(texture.image.height);
             rt.fromEquirectangularTexture(renderer, texture);
