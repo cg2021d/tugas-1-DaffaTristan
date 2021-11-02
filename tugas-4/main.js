@@ -23,7 +23,7 @@ function main() {
   
     var texture, material, plane;
 
-    texture = THREE.ImageUtils.loadTexture( "/texture/patio.jpg" );
+    texture = THREE.ImageUtils.loadTexture( "https://user-images.githubusercontent.com/72509035/139847609-6367b0fe-c746-4876-ada4-3ec1a61f3cba.jpg" );
 
     texture.wrapS = THREE.RepeatWrapping; 
     texture.wrapT = THREE.RepeatWrapping;
@@ -118,7 +118,7 @@ function main() {
 
     {
         const loader = new THREE.TextureLoader();
-        const texture = loader.load('/background/snow.jpg',
+        const texture = loader.load('https://user-images.githubusercontent.com/72509035/139847793-dc7a16a5-b9b3-4aaf-aafa-d7140dd52ce0.jpg',
         () => {
             const rt = new THREE.WebGLCubeRenderTarget(texture.image.height);
             rt.fromEquirectangularTexture(renderer, texture);
